@@ -22,6 +22,9 @@ apt-get install -y nginx
 echo "==> Preparing webroot at $WEBROOT"
 mkdir -p "$WEBROOT"
 cp -r "$REPO_DIR/index.html" "$REPO_DIR/styles.css" "$REPO_DIR/script.js" "$WEBROOT/"
+if [[ -d "$REPO_DIR/assets" ]]; then
+  cp -r "$REPO_DIR/assets" "$WEBROOT/"
+fi
 chown -R www-data:www-data "$WEBROOT"
 chmod -R 755 "$WEBROOT"
 
