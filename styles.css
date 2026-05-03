@@ -103,28 +103,26 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.15; colo
   box-shadow: 0 4px 24px rgba(0,0,0,0.06);
 }
 .navbar.scrolled .nav-links a { color: var(--text); }
-.navbar.scrolled .logo-text { color: var(--brand); }
-.navbar.scrolled .logo-text small { color: var(--muted); }
 .navbar.scrolled .hamburger span { background: var(--text); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; }
 .logo { display: flex; align-items: center; gap: 10px; }
-.logo-mark {
-  width: 44px; height: 44px;
-  display: grid; place-items: center;
-  color: var(--brand);
-  flex-shrink: 0;
+.logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+  border-radius: 6px;
+  background: #f5f1ea;
+  padding: 4px 10px;
+  transition: transform 0.25s ease;
 }
-.logo-mark svg { width: 100%; height: 100%; display: block; }
-.logo-text {
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 0.18em;
-  font-size: 20px;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
+.logo:hover .logo-img { transform: scale(1.04); }
+.logo-img-footer {
+  height: 56px;
+  background: #f5f1ea;
 }
-.logo-text small { font-size: 9px; color: rgba(255,255,255,0.75); letter-spacing: 0.3em; margin-top: 4px; }
+.navbar:not(.scrolled) .logo-img {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
 
 .nav-links { display: flex; align-items: center; gap: 32px; }
 .nav-links a {
@@ -503,9 +501,7 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.15; colo
   padding: 70px 0 0;
   border-top: 1px solid var(--line);
 }
-.footer h4, .footer .logo-text { color: #fff; }
-.footer .logo-mark { color: var(--brand-light); }
-.footer .logo-text small { color: var(--brand-light); }
+.footer h4 { color: #fff; }
 .footer-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
